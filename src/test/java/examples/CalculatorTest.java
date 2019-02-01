@@ -41,4 +41,25 @@ public class CalculatorTest { // Nazwa klasy testowej, zwykle nazwa testowanej k
         assertThat(result, is(2));
         assertThat(result, is(not(3)));
     }
+    @Test
+    public void testTwoNumbersOneWithFraction (){
+        // GIVEN
+        double x = 4.0, y = 4.9;
+        boolean areNumbersSame;
+        // WHEN
+        areNumbersSame = Calculator.isTwoNumberConstantPartSame(x,y);
+        // THEN
+        assertTrue(areNumbersSame);
+    }
+
+    @Test
+    public void testIfFalseTwoDifferentNumbers () {
+        // GIVEN
+        double x = Double.NaN, y = 5.01;
+        boolean areNumbersTheSame;
+        // WHEN
+        areNumbersTheSame = Calculator.isTwoNumberConstantPartSame(x,y);
+        // THEN
+        assertFalse(areNumbersTheSame);
+    }
 }

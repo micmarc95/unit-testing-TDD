@@ -20,7 +20,6 @@ public class ShoppingCart {
         if(newProductOrder == null){
             throw new IllegalArgumentException("Argument must be provided");
         }
-
         if(orders.stream().anyMatch(order -> order.getProductName().equals(newProductOrder.getProductName()))){
             throw new ProductAlreadyInCartException(String.format("Product %s is already in the shopping cart", newProductOrder.getProductName()));
             // TODO: Instead of throwing exception, up the quantity of the product
